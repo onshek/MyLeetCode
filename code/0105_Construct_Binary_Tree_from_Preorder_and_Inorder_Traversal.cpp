@@ -9,7 +9,7 @@
  */
 class Solution {
 private:
-    map<int, int> idxMap;
+    unordered_map<int, int> idxMap;
 public:
     TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
         int _size = preorder.size();
