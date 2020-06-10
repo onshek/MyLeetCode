@@ -15,7 +15,7 @@ public:
     TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
         preOrder = preorder; inOrder = inorder;
         int _size = preOrder.size();
-        for (int i=0; i<_size; i++) idxMap[inorder[i]] = i;
+        for (int idx=0; idx<_size; idx++) idxMap[inorder[idx]] = idx;
         return construct(0, 0, _size-1);
     }
 
