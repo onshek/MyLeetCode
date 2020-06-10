@@ -14,18 +14,19 @@ private:
 public:
     TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
         preOrder = preorder; inOrder = inorder;
-        int _size = preOrder.size();
+        int _size = preorder.size();
         for (int i=0; i<_size; i++) idxMap[inorder[i]] = i;
-        return construct(0, 0, _size-1);
+        return construct(0, _size-1, 0, _size-1);
     }
 
-    TreeNode* construct(int preRoot, int inLeft, int inRight) {
-        if (inLeft > inRight) return nullptr;
+    TreeNode* construct(int preLeft, int preRight, int inLeft, int inRight) {
+        if (preLeft > preRight) return nullptr;
+        int preRoot = preLeft;
         int inRoot = idxMap[preOrder[preRoot]];
         TreeNode* root = new TreeNode(preOrder[preRoot]);
         int leftChildSize = inRoot - inLeft;
-        root->left = construct(preRoot+1, inLeft, inRoot-1);
-        root->right = construct(preRoot+leftChildSize+1, inRoot+1, inRight);
+        root->left = construct(preLeft+1, preLeft+leftChildSize, inLeft, inRoot-1);
+        root->right = construct(preLeft+leftChildSize+1, preRight, inRoot+1, inRight);
         return root;
     }
 };
