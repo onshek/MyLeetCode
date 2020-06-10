@@ -1,7 +1,7 @@
 class Solution {
 public:
     void sortColors(vector<int>& nums) {
-        map<int, int> cntMap;
+        unordered_map<int, int> cntMap;
         cntMap[0] = 0;
         cntMap[1] = 0;
         cntMap[2] = 0;

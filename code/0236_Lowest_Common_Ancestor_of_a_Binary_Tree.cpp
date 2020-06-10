@@ -12,7 +12,7 @@ public:
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
         if (!root) return root;
         // level order traverse + map
-        map<TreeNode*, TreeNode*> tnMap;
+        unordered_map<TreeNode*, TreeNode*> tnMap;
         queue<TreeNode*> tnQueue; tnQueue.push(root);  // record pair(child, parent)
         TreeNode* oldQ = q;
         int cnt = 0;  // stop while loop if p and q has been found

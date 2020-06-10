@@ -13,7 +13,7 @@ public:
         // level order traverse
         vector<vector<int>> res;
         if (!root) return res;
-        map<TreeNode*, TreeNode*> tnMap;
+        unordered_map<TreeNode*, TreeNode*> tnMap;
         vector<TreeNode*> leafNode;
         queue<TreeNode*> tnQueue; tnQueue.push(root);
         while (!tnQueue.empty()) {

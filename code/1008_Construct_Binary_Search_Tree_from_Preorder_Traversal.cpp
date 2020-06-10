@@ -11,7 +11,7 @@
  */
 class Solution {
 private:
-    map<int, int> idxMap;
+    unordered_map<int, int> idxMap;
 public:
     TreeNode* bstFromPreorder(vector<int>& preorder) {
         // reference: 0105

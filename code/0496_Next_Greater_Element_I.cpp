@@ -3,7 +3,7 @@ public:
     vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
         vector<int> result;
         if ((nums2.size() == 0) || (nums1.size() == 0)) return result;
-        map<int, int> m;
+        unordered_map<int, int> m;
 
         for (int i=0; i<nums2.size()-1; i++) {
             for (int j=i+1; j<nums2.size(); j++) {
