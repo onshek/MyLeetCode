@@ -1,3 +1,7 @@
 #########################################
 # Editor temporary/working/backup files #
 .vscode/
+
+# OS generated files #
+######################
+.DS_Store
